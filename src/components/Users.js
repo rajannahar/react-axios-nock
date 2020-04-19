@@ -8,7 +8,7 @@ const Users = () => {
     axios
       .get("https://jsonplaceholder.typicode.com/users")
       .then((response) => {
-        console.log("res", response);
+        // console.log("res", response);
         setUsers(response.data);
       })
       .catch((error) => console.error("err", error));
