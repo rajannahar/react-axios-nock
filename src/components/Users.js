@@ -8,7 +8,7 @@ const Users = () => {
     axios
       .get("https://jsonplaceholder.typicode.com/users")
       .then((response) => {
-        console.log("res", response);
+        // console.log("res", response);
         setUsers(response.data);
       })
       .catch((error) => console.error("err", error));
@@ -18,13 +18,13 @@ const Users = () => {
     <div>
       <h1>Users</h1>
 
-      <ul>
+      <ul data-testid="user-list">
         {users.length > 0 ? (
           users.map((user) => {
             return <li key={user.id}>{user.name}</li>;
           })
         ) : (
-          <p>Loading...</p>
+          <p data-testid="loading">Loading...</p>
         )}
       </ul>
     </div>
